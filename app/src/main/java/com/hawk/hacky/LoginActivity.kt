@@ -24,14 +24,22 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         var Contador = 0
+
+        // abre signUp Activity
         binding.nuevoUsuario.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnIniciarSesion.setOnClickListener{
-            auth.signInWithEmailAndPassword(binding.txtEmail.editText?.text.toString().trim(), binding.txtPassword.editText?.text.toString().trim()).addOnCompleteListener { Task ->
+
+            auth.signInWithEmailAndPassword(binding.txtEmail.editText?.text.toString().trim(),
+                binding.txtPassword.editText?.text.toString().trim()).addOnCompleteListener { Task ->
+
+                // TODO: VALIDAR LOS ESPACIOS EN BLANCO JACK
+
                 if (Task.isSuccessful) {
                     val intent = Intent(this,  MainActivity::class.java)
                     startActivity(intent)
@@ -42,7 +50,6 @@ class LoginActivity : AppCompatActivity() {
                     if (Contador == 3) {
                         Contador = 0
                         showDialog()
-
                     }
                 }
         }
@@ -69,8 +76,8 @@ class LoginActivity : AppCompatActivity() {
         // On click listener for dialog buttons
         val dialogClickListener = DialogInterface.OnClickListener { _, which ->
             when (which) {
-                DialogInterface.BUTTON_POSITIVE -> transitionBack()
-                DialogInterface.BUTTON_NEGATIVE -> toast("Porfavor Revise su correo o contraseña")
+                DialogInterface.BUTTON_POSITIVE -> startActivity(Intent(this,  SignUpActivity::class.java))
+                DialogInterface.BUTTON_NEGATIVE -> Toast.makeText(this, "Revise su contrasena o correo", Toast.LENGTH_SHORT).show()
             }
         }
 
