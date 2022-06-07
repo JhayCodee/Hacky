@@ -12,4 +12,7 @@
     <string name="para_seguir_usando_la_app_tienes_que_registrarte">Para seguir usando la app, tienes que registrarte.</string>
     <string name="iniciar_sesion">Iniciar Sesion</string>
     <string name="eres_nuevo_registrate">¿Eres nuevo? Registrate</string>
+    <string name="home">Home</string>
+    <string name="canales">Canales</string>
+    <string name="cursos">Cursos</string>
 </resources>
