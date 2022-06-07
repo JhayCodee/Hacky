@@ -9,6 +9,7 @@
 
 
     <ImageView
+        android:contentDescription="@string/logo"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="230dp"
@@ -31,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="¡Bienvenido!"
-        android:textColor="@color/black"
+        android:text="@string/bienvenido"
+        android:textColor="@color/negro"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:fontFamily="@font/montserrat_regular"
-        android:text="Para seguir usando la app, tienes que registrarte."
+        android:text="@string/para_seguir_usando_la_app_tienes_que_registrarte"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/negro"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.188">
+        app:layout_constraintVertical_bias="0.098">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtEmail"
@@ -73,13 +74,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:hint="Email"
-            android:transitionName="emailInputTextTrans">
+            android:hint="@string/email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"></com.google.android.material.textfield.TextInputEditText>
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/negro">
+
+            </com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,15 +93,19 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:hint="Password"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/password"
             android:transitionName="passwordInputTextTrans"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="textPassword"
+                android:textColor="@color/negro">
+
+            </com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,9 +115,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="20dp"
-            android:text="Inicio"
-            android:transitionName="buttinSignInTrans" />
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/azul"
+            android:text="@string/iniciar_sesion" />
 
         <TextView
             android:id="@+id/nuevoUsuario"
@@ -119,11 +127,10 @@
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Eres nuevo? Registrate"
+            android:text="@string/eres_nuevo_registrate"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:transitionName="newUserTrans" />
-
+            android:textColor="@color/negro"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
