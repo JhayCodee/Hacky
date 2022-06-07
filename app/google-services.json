@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "304052649117",
+    "project_id": "hacky-1b198",
+    "storage_bucket": "hacky-1b198.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304052649117:android:5175ff1e8ede9f0dc12874",
+        "android_client_info": {
+          "package_name": "com.hawk.hacky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304052649117-rpoaepu2t9gr34nia962ee5kignhd256.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUTaxHFzAuIaTJqSPKUNS9Ivq0wUWILlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304052649117-rpoaepu2t9gr34nia962ee5kignhd256.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

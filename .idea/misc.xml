@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Hacky/app/src/main/res/layout/activity_login.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Hacky/app/src/main/res/layout/activity_main.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Hacky/app/src/main/res/layout/activity_sign_up.xml" value="0.286231884057971" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/drawable/ic_hacky_logo.xml" value="0.16" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/drawable/splash_background.xml" value="0.2585" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/layout/activity_login.xml" value="0.33" />
