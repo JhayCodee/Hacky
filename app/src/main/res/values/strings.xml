@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Hacky</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="logo">logo</string>
+    <string name="reg_strate_para_usar_hacky">Regístrate para usar Hacky!</string>
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmar_password">Confirmar Password</string>
+    <string name="ya_tienes_cuenta_inicia_sesion">¿Ya tienes cuenta? Inicia Sesion!</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="para_seguir_usando_la_app_tienes_que_registrarte">Para seguir usando la app, tienes que registrarte.</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="eres_nuevo_registrate">¿Eres nuevo? Registrate</string>
 </resources>
