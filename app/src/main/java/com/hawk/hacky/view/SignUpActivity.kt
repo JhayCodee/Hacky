@@ -1,4 +1,4 @@
-package com.hawk.hacky
+package com.hawk.hacky.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

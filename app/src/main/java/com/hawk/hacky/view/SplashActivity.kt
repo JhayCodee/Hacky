@@ -1,4 +1,4 @@
-package com.hawk.hacky
+package com.hawk.hacky.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
