@@ -5,7 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
+
 import com.hawk.hacky.R
+import com.hawk.hacky.adapter.CursosAdapter
+import com.hawk.hacky.databinding.FragmentHomeBinding
+import com.hawk.hacky.provider.Cursos
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,9 +41,63 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater)
+        return binding.root
     }
+
+
+    // codigo del fragment
+    private var _binding : FragmentHomeBinding? = null
+    private val binding: FragmentHomeBinding get() = _binding!!
+
+    private lateinit var dbref : DatabaseReference
+    private lateinit var cursosRecyclerview : RecyclerView
+    private lateinit var cursosArrayList : ArrayList<Cursos>
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        cursosRecyclerview = binding.cursosRV
+        cursosRecyclerview.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL,false)
+        cursosRecyclerview.setHasFixedSize(true)
+
+        cursosArrayList = arrayListOf<Cursos>()
+        getData()
+    }
+
+    fun getData() {
+
+        dbref = FirebaseDatabase.getInstance().getReference("Cursos")
+
+        dbref.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                if (snapshot.exists()) {
+
+                    for (cursoSnapshot in snapshot.children) {
+
+                        val curso = cursoSnapshot.getValue(Cursos::class.java)
+                        cursosArrayList.add(curso!!)
+                    }
+
+                    binding.cursosRV.adapter = CursosAdapter(cursosArrayList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+    }
+
+
+
+
+
 
     companion object {
         /**
