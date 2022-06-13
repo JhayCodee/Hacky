@@ -31,24 +31,26 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnIniciarSesion.setOnClickListener{
+            if(binding.txtEmail.editText?.text.toString().trim{ it <= ' '}.isEmpty() && binding.txtPassword.editText?.text.toString().trim{it <=' '}.isEmpty()){
+                Toast.makeText(this, "Debe llenar los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                auth.signInWithEmailAndPassword(binding.txtEmail.editText?.text.toString().trim(),
+                    binding.txtPassword.editText?.text.toString().trim()).addOnCompleteListener { Task ->
 
-            auth.signInWithEmailAndPassword(binding.txtEmail.editText?.text.toString().trim(),
-                binding.txtPassword.editText?.text.toString().trim()).addOnCompleteListener { Task ->
 
-                // TODO: VALIDAR LOS ESPACIOS EN BLANCO JACK
-
-                if (Task.isSuccessful) {
-                    val intent = Intent(this,  MainActivity::class.java)
-                    startActivity(intent)
-                }
-                else {
-                    Toast.makeText(this, "ERROR , Revise Correo O contraseña", Toast.LENGTH_SHORT).show()
-                    Contador += 1
-                    if (Contador == 3) {
-                        Contador = 0
-                        showDialog()
+                    if (Task.isSuccessful) {
+                        val intent = Intent(this,  MainActivity::class.java)
+                        startActivity(intent)
                     }
-                }
+                    else {
+                        Toast.makeText(this, "ERROR , Revise Correo O contraseña", Toast.LENGTH_SHORT).show()
+                        Contador += 1
+                        if (Contador == 3) {
+                            Contador = 0
+                            showDialog()
+                        }
+                    }
+            }
         }
     }
 
