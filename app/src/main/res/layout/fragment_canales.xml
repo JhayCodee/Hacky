@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CanalesFragment">
+    tools:context=".view.HomeFragment"
+    android:orientation="vertical"
+    android:background="@color/celesteClaro">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/canales" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/negro"
+        android:text="Disfruta de los mejores canales"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_bold"
+        />
 
-</FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/canalesRV"
+        android:layout_margin="20dp"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+
+
+</LinearLayout>
