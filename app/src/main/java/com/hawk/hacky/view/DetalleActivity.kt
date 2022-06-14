@@ -1,9 +1,13 @@
 package com.hawk.hacky.view
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.hawk.hacky.R
 import com.hawk.hacky.databinding.ActivityDetalleBinding
@@ -35,6 +39,14 @@ class DetalleActivity : AppCompatActivity() {
             openURL.data = Uri.parse(link)
             startActivity(openURL)
         }
+        binding.cellbox.setOnClickListener{
+            var number = "+505 5760 6175"
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel: $number")
+            startActivity(intent)
+        }
+
     }
+
 
 }

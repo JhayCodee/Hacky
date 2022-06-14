@@ -41,7 +41,7 @@ class CursosFragment : Fragment() {
 
     }
 
-    fun loadView() {
+    private fun loadView() {
 
         cursosRecyclerview = binding.cursosRV
         cursosRecyclerview.layoutManager = LinearLayoutManager(context)
@@ -52,7 +52,7 @@ class CursosFragment : Fragment() {
     }
 
 
-    fun getCursos() {
+    private fun getCursos() {
 
         dbref = FirebaseDatabase.getInstance().getReference("Cursos")
 

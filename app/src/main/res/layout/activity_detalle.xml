@@ -53,12 +53,31 @@
 
 
     <TextView
-        android:layout_width="match_parent"
         android:id="@+id/linkbox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/celeste"
         android:fontFamily="@font/montserrat_bold"
+        android:padding="5dp"
         android:text="Click aqui para acceder a la web!"
+        android:textAlignment="center"
+        android:textColor="@color/negro"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cellbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:background="@color/celeste"
+        android:fontFamily="@font/montserrat_bold"
+        android:padding="5dp"
+        android:text="Click aqui para llamar!"
         android:textAlignment="center"
         android:textColor="@color/negro"
         android:textSize="20sp"
