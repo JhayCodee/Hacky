@@ -13,5 +13,6 @@
     <color name="celeste">#9ec5de</color>
     <color name="celesteClaro">#f2f6fe</color>
     <color name="rojo">#bb182a</color>
+    <color name="gris">#dddddd</color>
 
 </resources>
