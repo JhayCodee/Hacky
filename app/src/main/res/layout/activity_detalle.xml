@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/celesteClaro"
+    android:background="@drawable/bg_main"
     tools:context=".view.DetalleActivity">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="35dp"
-        android:backgroundTint="@color/celeste"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/celeste"
+            android:background="@color/celesteClaro"
             android:scaleType="fitXY">
 
         </ImageView>
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/celesteClaro"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:background="@color/white"
+            android:background="@color/celesteClaro"
 
             >
 
@@ -93,26 +93,25 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/linkCurso"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="28dp"
         app:cardCornerRadius="20dp"
+        android:background="@color/celesteClaro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            >
+            android:background="@color/celesteClaro">
 
             <TextView
                 android:id="@+id/linkbox"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="¡Ir al Curso!"

@@ -6,6 +6,7 @@
     android:id="@+id/carView"
     android:layout_width="match_parent"
     android:layout_height="90dp"
+    android:backgroundTint="@color/celesteClaro"
     cardView:cardCornerRadius="8dp"
     cardView:cardElevation="8dp"
     android:layout_margin="8dp">

@@ -6,7 +6,7 @@
     android:id="@+id/itemCardView"
     android:layout_width="200dp"
     android:layout_height="125dp"
-    android:backgroundTint="@color/white"
+    android:backgroundTint="@color/celesteClaro"
     app:cardCornerRadius="20dp"
     app:cardElevation="8dp"
     android:layout_marginHorizontal="8dp"

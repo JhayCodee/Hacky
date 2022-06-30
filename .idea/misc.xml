@@ -28,15 +28,26 @@
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/layout/shimmer_curso_detalle.xml" value="0.3546195652173913" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/layout/shimmer_cursos.xml" value="0.3546195652173913" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Hacky/app/src/main/res/menu/nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/bottomnav_bg.xml" value="0.2635" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/color.xml" value="0.2035" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/color_normal.xml" value="0.2515" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.224" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/ic_baseline_collections_bookmark_24.xml" value="0.2635" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2635" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2635" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/drawable/ic_cloud.xml" value="0.224" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/activity_detalle.xml" value="0.33" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/activity_login.xml" value="0.3500905797101449" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/activity_main.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/canales.xml" value="0.32065217391304346" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/card_cursos.xml" value="0.32065217391304346" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/cursos.xml" value="0.32065217391304346" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/fragment_canales.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/fragment_cursos.xml" value="0.33" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/fragment_home.xml" value="0.32065217391304346" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/shimmer_canales.xml" value="0.32065217391304346" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/layout/shimmer_cursos.xml" value="0.32065217391304346" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/hacky-copia/app/src/main/res/menu/nav_menu.xml" value="0.3651041666666667" />
       </map>
     </option>
   </component>

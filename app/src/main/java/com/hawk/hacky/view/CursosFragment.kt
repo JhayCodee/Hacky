@@ -1,10 +1,12 @@
 package com.hawk.hacky.view
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -41,16 +43,24 @@ class CursosFragment : Fragment() {
 
         binding.btnFrontend.setOnClickListener {
             getCursosPorCondicion("frontend", false)
+            binding.btnFrontend.setBackgroundResource(R.drawable.color)
+            binding.btnBackend.setBackgroundResource(R.drawable.color_normal)
+            binding.btnCloud.setBackgroundResource(R.drawable.color_normal)
         }
 
         binding.btnBackend.setOnClickListener {
             getCursosPorCondicion("backend", false)
+            binding.btnFrontend.setBackgroundResource(R.drawable.color_normal)
+            binding.btnBackend.setBackgroundResource(R.drawable.color)
+            binding.btnCloud.setBackgroundResource(R.drawable.color_normal)
         }
 
         binding.btnCloud.setOnClickListener {
             getCursosPorCondicion("cloud", false)
+            binding.btnFrontend.setBackgroundResource(R.drawable.color_normal)
+            binding.btnBackend.setBackgroundResource(R.drawable.color_normal)
+            binding.btnCloud.setBackgroundResource(R.drawable.color)
         }
-
     }
 
     fun loadView() {
@@ -95,9 +105,7 @@ class CursosFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("sin implementar")
             }
-
         })
     }
-
 
 }

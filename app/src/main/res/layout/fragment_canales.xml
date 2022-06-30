@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.HomeFragment"
     android:orientation="vertical"
-    android:background="@color/celesteClaro">
+    android:background="@drawable/bg_main">
 
     <TextView
         android:layout_width="match_parent"
