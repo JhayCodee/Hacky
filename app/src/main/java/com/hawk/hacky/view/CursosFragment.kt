@@ -39,6 +39,18 @@ class CursosFragment : Fragment() {
 
         loadView()
 
+        binding.btnFrontend.setOnClickListener {
+            getCursosPorCondicion("frontend", false)
+        }
+
+        binding.btnBackend.setOnClickListener {
+            getCursosPorCondicion("backend", false)
+        }
+
+        binding.btnCloud.setOnClickListener {
+            getCursosPorCondicion("cloud", false)
+        }
+
     }
 
     fun loadView() {
@@ -48,11 +60,12 @@ class CursosFragment : Fragment() {
         cursosRecyclerview.setHasFixedSize(true)
         cursosArrayList = arrayListOf<Cursos>()
 
-        getCursos()
+        getCursosPorCondicion("", true)
     }
 
+    fun getCursosPorCondicion(categoria:String, todos:Boolean) {
 
-    fun getCursos() {
+        cursosArrayList.clear()
 
         dbref = FirebaseDatabase.getInstance().getReference("Cursos")
 
@@ -65,19 +78,26 @@ class CursosFragment : Fragment() {
                     for (cursoSnapshot in snapshot.children) {
 
                         val curso = cursoSnapshot.getValue(Cursos::class.java)
-                        cursosArrayList.add(curso!!)
 
+                        if (todos) {
+                            cursosArrayList.add(curso!!)
+                        }
+                        else {
+                            if (curso?.categoria == categoria) {
+                                cursosArrayList.add(curso)
+                            }
+                        }
                     }
 
                     binding.cursosRV.adapter = CursoDetalleAdapter(cursosArrayList)
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                TODO("sin implementar")
             }
 
         })
     }
+
 
 }

@@ -71,7 +71,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="32dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Mejores Cursos"
         android:textColor="@color/negro"
@@ -92,6 +92,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_auto_start="false"
+        android:id="@+id/cursosshimmer"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/shimmerrv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" >
+
+            <include layout="@layout/shimmer_cursos"/>
+            <include layout="@layout/shimmer_cursos"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -100,7 +129,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Mejores Canales"
         android:textColor="@color/negro"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="32dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
@@ -119,6 +148,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/canalesshimmer"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginHorizontal="20dp"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+            <include layout="@layout/shimmer_canales"/>
+            <include layout="@layout/shimmer_canales"/>
+            <include layout="@layout/shimmer_canales"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
 </LinearLayout>

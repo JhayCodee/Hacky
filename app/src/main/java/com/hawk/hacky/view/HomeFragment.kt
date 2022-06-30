@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -48,87 +49,95 @@ class HomeFragment : Fragment() {
 
         cursosRecyclerview = binding.cursosRV
         canalesRecyclerView = binding.canalesRV
+
         cursosRecyclerview.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL,false)
         canalesRecyclerView.layoutManager = LinearLayoutManager(context)
+
         cursosRecyclerview.setHasFixedSize(true)
         canalesRecyclerView.setHasFixedSize(true)
+
         cursosArrayList = arrayListOf<Cursos>()
         canalessArrayList = arrayListOf<Canales>()
 
         getData()
     }
 
-
-    // obtiene los datos de firebase para cargar los recyler view
     fun getData() {
 
-        getCanales()
-        getCursos()
+        binding.cursosshimmer.startShimmer()
+        binding.canalesshimmer.startShimmer()
+
+        getInfoFromDb("Canales")
+        getInfoFromDb("Cursos")
+
+        binding.canalesshimmer.stopShimmer()
+        binding.cursosshimmer.stopShimmer()
+        binding.cursosshimmer.isVisible = false
     }
 
+    // obtiene los datos de firebase para cargar los recyler view
+    fun getInfoFromDb(categoria: String) {
 
-    fun getCursos() {
+        dbref = FirebaseDatabase.getInstance().getReference(categoria)
 
-        dbref = FirebaseDatabase.getInstance().getReference("Cursos")
+        if (categoria == "Cursos") {
 
-        dbref.addValueEventListener(object : ValueEventListener {
+            dbref.addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(snapshot: DataSnapshot) {
+                override fun onDataChange(snapshot: DataSnapshot) {
 
-                if (snapshot.exists()) {
+                    if (snapshot.exists()) {
 
-                    var i = 0
+                        var i = 0
 
-                    for (cursoSnapshot in snapshot.children) {
+                        for (cursoSnapshot in snapshot.children) {
 
-                        if (i < 5) {
-                            val curso = cursoSnapshot.getValue(Cursos::class.java)
-                            cursosArrayList.add(curso!!)
+                            if (i < 3) {
+                                val curso = cursoSnapshot.getValue(Cursos::class.java)
+                                cursosArrayList.add(curso!!)
+                            }
+                            i++
                         }
-                        i++
+                        binding.cursosRV.adapter = CursosAdapter(cursosArrayList)
                     }
-
-                    binding.cursosRV.adapter = CursosAdapter(cursosArrayList)
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("sin implementar")
+                }
 
-        })
-    }
+            })
 
-    fun getCanales() {
+        }
+        else {
+            dbref.addValueEventListener(object : ValueEventListener {
 
-        dbref = FirebaseDatabase.getInstance().getReference("Canales")
+                override fun onDataChange(snapshot: DataSnapshot) {
 
-        dbref.addValueEventListener(object : ValueEventListener {
+                    if (snapshot.exists()) {
 
-            override fun onDataChange(snapshot: DataSnapshot) {
+                        var i = 0
 
-                if (snapshot.exists()) {
+                        for (canalSnapshot in snapshot.children) {
 
-                    var i = 0
-
-                    for (canalSnapshot in snapshot.children) {
-
-                        if (i < 3) {
-                            val canal = canalSnapshot.getValue(Canales::class.java)
-                            canalessArrayList.add(canal!!)
+                            if (i < 3) {
+                                val canal = canalSnapshot.getValue(Canales::class.java)
+                                canalessArrayList.add(canal!!)
+                            }
+                            i++
                         }
-                        i++
+
+                        binding.canalesRV.adapter = CanalesAdapter(canalessArrayList)
                     }
-
-                    binding.canalesRV.adapter = CanalesAdapter(canalessArrayList)
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("sin implementar")
+                }
 
-        })
+            })
+        }
+
     }
 
 }

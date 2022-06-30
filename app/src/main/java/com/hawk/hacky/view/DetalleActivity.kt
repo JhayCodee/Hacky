@@ -30,7 +30,7 @@ class DetalleActivity : AppCompatActivity() {
         Glide.with(binding.imageView3.context).load(img).into(binding.imageView3)
         binding.tvName.text = nombre
         binding.tvdesc.text = desc
-        binding.linkbox.setOnClickListener {
+        binding.linkCurso.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data = Uri.parse(link)
             startActivity(openURL)

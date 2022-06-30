@@ -13,6 +13,7 @@ class CanalesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val binding = CanalesBinding.bind(view)
 
     fun render (canal: Canales){
+
         binding.title.text = canal.nombre
         Glide.with(binding.image.context).load(canal.img).into(binding.image)
 
@@ -25,7 +26,6 @@ class CanalesViewHolder(view: View): RecyclerView.ViewHolder(view) {
             intent.putExtra("desc", canal.descripcion)
             binding.carView.context.startActivity(intent)
         }
-
     }
 
 }
