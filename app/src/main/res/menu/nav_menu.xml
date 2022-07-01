@@ -19,4 +19,18 @@
         android:icon="@drawable/ic_baseline_person_24"
         />
 
+    <item
+        android:id="@+id/newsFragment"
+        android:title="Noticias"
+        android:icon="@drawable/ic_baseline_fiber_new_24"
+        />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Perfil"
+        android:icon="@drawable/ic_baseline_person_pin_24"
+        />
+
+
+
 </menu>
