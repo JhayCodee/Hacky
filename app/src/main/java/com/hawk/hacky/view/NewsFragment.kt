@@ -12,8 +12,6 @@ import com.hawk.hacky.utils.Constants.Companion.BASE_URL
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
 
 
@@ -30,34 +28,8 @@ class NewsFragment : Fragment() {
         _binding = FragmentNewsBinding.inflate(inflater)
         return binding.root
 
-        makeAPIRequest()
-
     }
 
-    fun makeAPIRequest() {
 
-        val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(APIRequest::class.java)
-
-        GlobalScope.launch(Dispatchers.IO) {
-
-            try {
-                val response = api.getNews()
-
-                for (article in response.news) {
-                    Log.i("MainActivity", "Result = $article")
-                    println(article.toString())
-                }
-
-            } catch (e: Exception) {
-                Log.e("MainActivity", e.toString())
-                println(e.toString())
-            }
-        }
-
-    }
 
 }
