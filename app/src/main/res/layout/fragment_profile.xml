@@ -15,7 +15,7 @@
         android:translationY="30dp" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/ProfilePic"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:translationX="104dp"
@@ -39,10 +39,18 @@
         android:translationY="200dp" />
 
     <Button
-        android:id="@+id/BtnAvatar"
+        android:id="@+id/Btnselecc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actualizar"
+        android:text="Seleccionar"
         android:translationX="200dp"
         android:translationY="200dp" />
+
+    <Button
+        android:id="@+id/Btnsubir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subir"
+        android:translationX="200dp"
+        android:translationY="250dp" />
 </FrameLayout>
