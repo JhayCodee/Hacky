@@ -1,6 +1,5 @@
 package com.hawk.hacky.view
 
-import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
@@ -12,15 +11,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.rpc.context.AttributeContext
 import com.hawk.hacky.databinding.FragmentProfileBinding
-import java.net.URI
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class ProfileFragment : Fragment() {
 
@@ -32,8 +32,6 @@ class ProfileFragment : Fragment() {
     lateinit var ImageUri : Uri
 
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,6 +39,8 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater)
 
+        //Provocar llenado del textview
+        RetUser()
 
         binding.BtnLogout.setOnClickListener {
             auth.signOut()
@@ -102,15 +102,18 @@ class ProfileFragment : Fragment() {
     //con esta retiramos el nombre del usuario
     private fun RetUser(){
         val db = FirebaseFirestore.getInstance()
-        val usersRef = db.collection("users")
-        usersRef.document().get().addOnCompleteListener { task ->
+        val usersRef = db.collection("Usuarios")
+        //docpath es a que documento debe apuntar
+        //Anthony : r3G9JyNWocHdCM6Fswrf
+        //Lulo :  crmdorcbiBJKIZt5TSwi
+        usersRef.document("crmdorcbiBJKIZt5TSwi").get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val document = task.result
                 if (document.exists()) {
-                    val email = document.getString("email")
-                    val pass = document.getString("pass")
-                    val user = document.getString("user")
-                    Log.d(TAG,"$email/$pass/$user")
+                    val email = document.getString("Correo")
+                    val user = document.getString("Nombre")
+                    //Log.d(TAG,"$email/$pass/$user")
+                    binding.TYPEUSER.setText(user.toString())
                 } else {
                     Log.d(TAG, "The document doesn't exist.")
                 }
