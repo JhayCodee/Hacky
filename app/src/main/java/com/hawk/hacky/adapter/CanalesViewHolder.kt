@@ -15,6 +15,7 @@ class CanalesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun render (canal: Canales){
 
         binding.title.text = canal.nombre
+        binding.categoria.text = canal.categoria
         Glide.with(binding.image.context).load(canal.img).into(binding.image)
 
         binding.carView.setOnClickListener {
@@ -24,8 +25,11 @@ class CanalesViewHolder(view: View): RecyclerView.ViewHolder(view) {
             intent.putExtra("link", canal.link)
             intent.putExtra("nombre", canal.nombre)
             intent.putExtra("desc", canal.descripcion)
+            intent.putExtra("btn", "Canal")
             binding.carView.context.startActivity(intent)
         }
+
+
     }
 
 }

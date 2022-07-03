@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_main"
+    android:background="@color/bg"
     tools:context=".view.DetalleActivity">
 
 
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="38dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,13 +24,13 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:background="@color/celesteClaro"
             android:scaleType="fitXY">
 
         </ImageView>
 
     </androidx.cardview.widget.CardView>
-
 
     <TextView
         android:id="@+id/tv_name"
@@ -41,12 +41,12 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Titulo"
         android:textAlignment="center"
-
-        android:textColor="@color/negro"
-        android:textSize="19dp"
+        android:textColor="@color/morado"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -78,7 +78,7 @@
                 android:text="Titulo"
                 android:textAlignment="center"
                 android:textColor="@color/negro"
-                android:textSize="19dp"
+                android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,14 +90,13 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/linkCurso"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="28dp"
-        app:cardCornerRadius="20dp"
         android:background="@color/celesteClaro"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -106,8 +105,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@color/celesteClaro">
+            android:background="@color/celesteClaro"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/linkbox"

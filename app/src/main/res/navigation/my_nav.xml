@@ -21,11 +21,6 @@
         android:label="fragment_canales"
         tools:layout="@layout/fragment_canales" />
     <fragment
-        android:id="@+id/newsFragment"
-        android:name="com.hawk.hacky.view.NewsFragment"
-        android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.hawk.hacky.view.ProfileFragment"
         android:label="fragment_profile"

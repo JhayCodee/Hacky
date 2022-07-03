@@ -11,30 +11,36 @@ import com.hawk.hacky.databinding.ActivityLoginBinding
 
 class DetalleActivity : AppCompatActivity() {
 
-        private lateinit var binding: ActivityDetalleBinding
+    private lateinit var binding: ActivityDetalleBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetalleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // obtiene datos de los viewholder
         val img = intent.getStringExtra("img")
         val link = intent.getStringExtra("link")
         val nombre = intent.getStringExtra("nombre")
         val descripcion = intent.getStringExtra("desc")
+        val curso = intent.getStringExtra("btn")
 
-        loadInfo(nombre, descripcion, img, link)
+        // cargamos los datos en la actividad
+        loadInfo(nombre, descripcion, img, curso)
+
+        binding.linkCurso.setOnClickListener {
+            val intent = Intent(this, WebActivity::class.java)
+            intent.putExtra("link", link)
+            startActivity(intent)
+        }
     }
 
-    private fun loadInfo(nombre:String?, desc:String?, img:String?, link:String?) {
+    private fun loadInfo(nombre:String?, desc:String?, img:String?,  curso:String?) {
+
         Glide.with(binding.imageView3.context).load(img).into(binding.imageView3)
         binding.tvName.text = nombre
         binding.tvdesc.text = desc
-        binding.linkCurso.setOnClickListener {
-            val openURL = Intent(Intent.ACTION_VIEW)
-            openURL.data = Uri.parse(link)
-            startActivity(openURL)
-        }
+        binding.linkbox.text = "¡Ir al $curso!"
     }
 
 }
