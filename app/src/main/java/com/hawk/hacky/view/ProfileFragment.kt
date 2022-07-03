@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar
 import com.hawk.hacky.databinding.FragmentProfileBinding
 import java.net.URI
 import java.text.SimpleDateFormat
