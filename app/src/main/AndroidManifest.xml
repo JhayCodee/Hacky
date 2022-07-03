@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hacky">
         <activity
+            android:name=".view.WebActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.DetalleActivity"
             android:exported="false" />
         <activity

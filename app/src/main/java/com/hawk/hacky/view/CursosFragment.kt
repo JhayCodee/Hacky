@@ -66,7 +66,7 @@ class CursosFragment : Fragment() {
     fun loadView() {
 
         cursosRecyclerview = binding.cursosRV
-        cursosRecyclerview.layoutManager = LinearLayoutManager(context)
+        cursosRecyclerview.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         cursosRecyclerview.setHasFixedSize(true)
         cursosArrayList = arrayListOf<Cursos>()
 
@@ -99,7 +99,7 @@ class CursosFragment : Fragment() {
                         }
                     }
 
-                    binding.cursosRV.adapter = CursoDetalleAdapter(cursosArrayList)
+                    binding.cursosRV.adapter = CursoDetalleAdapter(cursosArrayList.reversed())
                 }
             }
             override fun onCancelled(error: DatabaseError) {

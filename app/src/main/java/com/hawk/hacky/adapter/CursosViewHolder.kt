@@ -27,6 +27,7 @@ class CursosViewHolder(view: View): RecyclerView.ViewHolder(view) {
             intent.putExtra("link", curso.link)
             intent.putExtra("nombre", curso.nombre)
             intent.putExtra("desc", curso.descripcion)
+            intent.putExtra("btn", "Curso")
             binding.itemCardView.context.startActivity(intent)
         }
 

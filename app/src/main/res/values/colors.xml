@@ -15,4 +15,10 @@
     <color name="rojo">#bb182a</color>
     <color name="gris">#dddddd</color>
 
+    <!--- Colores Nuevos -->
+    <color name="morado">#616cc5</color>
+    <color name="celestito">#1fb1f1</color>
+    <color name="bg">#e6e9f3</color>
+
+
 </resources>

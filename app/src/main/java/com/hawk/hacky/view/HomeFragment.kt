@@ -1,6 +1,8 @@
 package com.hawk.hacky.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +20,8 @@ import com.hawk.hacky.provider.Canales
 import com.hawk.hacky.provider.Cursos
 
 class HomeFragment : Fragment() {
+
+    private var done = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,11 +44,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         loadView()
     }
 
-    // carga la vista del recycler view
+    // configuras los recycler
     fun loadView() {
 
         cursosRecyclerview = binding.cursosRV
@@ -62,17 +65,25 @@ class HomeFragment : Fragment() {
         getData()
     }
 
+    // carga los shimmer antes que se muestro los recyler con info
     fun getData() {
 
-        binding.cursosshimmer.startShimmer()
-        binding.canalesshimmer.startShimmer()
+        if (!done) {
+            Handler(Looper.getMainLooper()).postDelayed({
+                getInfoFromDb("Cursos")
+                getInfoFromDb("Canales")
+            },3000)
+            done = true
+        }
+        else {
+            getInfoFromDb("Canales")
+            getInfoFromDb("Cursos")
+            binding.cursosshimmer.isVisible = false
+            binding.canalesshimmer.isVisible = false
 
-        getInfoFromDb("Canales")
-        getInfoFromDb("Cursos")
-
+        }
         binding.canalesshimmer.stopShimmer()
         binding.cursosshimmer.stopShimmer()
-        binding.cursosshimmer.isVisible = false
     }
 
     // obtiene los datos de firebase para cargar los recyler view
@@ -99,6 +110,7 @@ class HomeFragment : Fragment() {
                             i++
                         }
                         binding.cursosRV.adapter = CursosAdapter(cursosArrayList)
+                        binding.cursosshimmer.isVisible = false
                     }
                 }
 
@@ -128,6 +140,7 @@ class HomeFragment : Fragment() {
                         }
 
                         binding.canalesRV.adapter = CanalesAdapter(canalessArrayList)
+                        binding.canalesshimmer.isVisible = false
                     }
                 }
 

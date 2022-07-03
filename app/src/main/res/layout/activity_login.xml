@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4FB"
+    android:background="@color/bg"
     tools:context=".view.LoginActivity">
 
 
@@ -33,7 +33,7 @@
         android:layout_marginTop="76dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/bienvenido"
-        android:textColor="@color/negro"
+        android:textColor="@color/azul"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
